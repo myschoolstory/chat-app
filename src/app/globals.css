@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --background: #36393f;
+  --foreground: #dcddde;
+  --primary: #5865f2;
+  --primary-foreground: #ffffff;
+  --secondary: #4f545c;
+  --secondary-foreground: #b9bbbe;
+  --muted: #2f3136;
+  --muted-foreground: #8e9297;
+  --accent: #404249;
+  --accent-foreground: #dcddde;
+  --destructive: #ed4245;
+  --destructive-foreground: #ffffff;
+  --border: #202225;
+  --input: #40444b;
+  --ring: #5865f2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2f3136;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #202225;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a1c1f;
+}
+
+/* Discord-like animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Message hover effects */
+.message-hover:hover {
+  background-color: #32353b;
+}
+
+/* Button focus styles */
+button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
